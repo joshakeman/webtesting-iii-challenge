@@ -16,4 +16,14 @@ describe('<Display />',  () => {
 
         getByText(/Open/i)
     })
+    it('Displays locked if the locked prop is true', () => {
+        const { getByText } = render(<Display locked />)
+
+        getByText(/locked/i)
+    })
+    it('Displays unlocked if the locked prop is false', () => {
+        const { getByText } = render(<Display closed={false}/>)
+
+        getByText(/unlocked/i)
+    })
 })
